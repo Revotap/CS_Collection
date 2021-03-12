@@ -1,2 +1,2 @@
 # CS_Collection
-A collection of C# programms written through time at university
+A collection of basic C# programs written through time at university
