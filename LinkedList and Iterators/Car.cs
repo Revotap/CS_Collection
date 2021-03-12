@@ -1,8 +1,12 @@
-﻿using System;
+﻿/*
+	Author: Leon Grell
+*/
+using System;
 
 namespace Revotap_LinkedList_Iterator
 {
-    class Car
+	/*Added class car to EventArgs to use it as a parameter in the call of a NewCarEvent*/
+    class Car : EventArgs
     {
         private String _manufacturer;
         private double _manu_year;

@@ -1,4 +1,7 @@
-﻿using System;
+﻿/*
+	Author: Leon Grell
+*/
+using System;
 
 namespace Revotap_LinkedList_Iterator
 {
@@ -6,9 +9,18 @@ namespace Revotap_LinkedList_Iterator
     {
         private LinkedList<Car> list = new LinkedList<Car>();
 
+		/*Delegate a new event handler for new cars beeing added*/
+		public delegate void NewCarEventHandler(object sender, EventArgs arg);
+		
+		/*Create an event object out of the new event handler*/
+        public event NewCarEventHandler NewCarEvent;
+
         public void Add(Car a)
         {
             list.Add(a);
+			
+			/*Call a new car event with this and the car as parameter*/
+			NewCarEvent(this, a);
         }
 
         public void Inventory()

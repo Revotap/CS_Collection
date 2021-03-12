@@ -1,9 +1,14 @@
-﻿using System;
+﻿/*
+	Author: Leon Grell
+	Description: Single chained linked list of generic type T. Features a special ListIterator created from the interface interator.cs
+*/
+using System;
 
 namespace Revotap_LinkedList_Iterator
 {
     class LinkedList<T>
     {
+		/*Inner class Link only used inside the LinkedList*/
         public class Link<E>
         {
             private E data;
@@ -27,6 +32,7 @@ namespace Revotap_LinkedList_Iterator
             }
         }
 
+		/*Inner class ListIterator*/
         public class ListIterator<G> : Iterator<G>
         {
             private Link<G> pointer;
@@ -59,6 +65,7 @@ namespace Revotap_LinkedList_Iterator
         private Link<T> head;
         private Link<T> tail;
 
+		/*Add data to the end of the list*/
         public int Add(T data)
         {
             if(head == null)
@@ -74,6 +81,7 @@ namespace Revotap_LinkedList_Iterator
             return 1;
         }
 
+		/*Remove element on position i*/
         public int Remove(int i)
         {
             if(head == null)
@@ -104,7 +112,7 @@ namespace Revotap_LinkedList_Iterator
             return 1;
         }
 
-
+		/*Returns a new iterator object of type ListIterator<T>*/
         public ListIterator<T> Iterator()
         {
             return new ListIterator<T>(head, tail);

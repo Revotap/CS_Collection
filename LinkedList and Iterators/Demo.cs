@@ -1,4 +1,8 @@
-﻿using System;
+﻿/*
+	Author: Leon Grell
+*/
+
+using System;
 
 namespace Revotap_LinkedList_Iterator
 {
@@ -9,6 +13,7 @@ namespace Revotap_LinkedList_Iterator
             Console.WriteLine("Demo - LinkedList and Iterators");
 
             Garage park = new Garage();
+			Info info = new Info(park);
 
             Car a1 = new Car("BMW", 2021);
             Car a2 = new Car();
